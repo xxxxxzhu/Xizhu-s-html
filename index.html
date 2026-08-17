@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xizhu Han · 韩熙竹</title>
+<meta name="description" content="Xizhu Han — Global Operations Analyst, Data Centre Infrastructure. 韩熙竹个人简历。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F6F4;
+    --panel:#FFFFFF;
+    --ink:#16202B;
+    --ink-soft:#51606D;
+    --ink-faint:#8A96A0;
+    --signal:#0F6E77;
+    --signal-soft:#E4EFEE;
+    --amber:#C8791F;
+    --amber-soft:#FBEEDD;
+    --line:#DCE1E1;
+    --navy:#0E1826;
+    --navy-panel:#152234;
+    --radius:2px;
+    --maxw:920px;
+    --font-display-en:'Space Grotesk', 'Noto Sans SC', sans-serif;
+    --font-display-zh:'Noto Sans SC', 'Space Grotesk', sans-serif;
+    --font-body-en:'Inter', 'Noto Sans SC', sans-serif;
+    --font-body-zh:'Noto Sans SC', 'Inter', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body-en);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  html[data-lang="zh"] body{font-family:var(--font-body-zh);}
+
+  /* language toggling */
+  [data-en],[data-zh]{display:none;}
+  html[data-lang="en"] [data-en]{display:inline;}
+  html[data-lang="en"] span.block[data-en]{display:block;}
+  html[data-lang="zh"] [data-zh]{display:inline;}
+  html[data-lang="zh"] span.block[data-zh]{display:block;}
+
+  h1,h2,h3{font-family:var(--font-display-en); margin:0; letter-spacing:-0.01em;}
+  html[data-lang="zh"] h1, html[data-lang="zh"] h2, html[data-lang="zh"] h3{font-family:var(--font-display-zh); letter-spacing:0;}
+
+  a{color:var(--signal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--signal); outline-offset:3px;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* --- lang toggle --- */
+  .lang-toggle{
+    position:fixed; top:18px; right:20px; z-index:50;
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:999px; padding:4px; display:flex; gap:2px;
+    box-shadow:0 2px 10px rgba(14,24,38,0.08);
+  }
+  .lang-toggle button{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.04em;
+    border:none; background:transparent; color:var(--ink-faint);
+    padding:6px 12px; border-radius:999px; cursor:pointer;
+    transition:background .18s ease, color .18s ease;
+  }
+  .lang-toggle button.active{background:var(--navy); color:#fff;}
+
+  /* --- hero --- */
+  .hero{
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-panel) 100%);
+    color:#EDF1F3;
+    padding:88px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:radial-gradient(ellipse 70% 60% at 70% 20%, black 10%, transparent 75%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; display:flex; gap:48px; align-items:flex-end; flex-wrap:wrap;}
+  .hero-text{flex:1 1 420px; min-width:280px;}
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--amber); display:flex; align-items:center; gap:8px; margin-bottom:18px;
+  }
+  .status-dot{
+    width:7px; height:7px; border-radius:50%; background:var(--amber);
+    box-shadow:0 0 0 0 rgba(200,121,31,0.6);
+    animation:pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(200,121,31,0.55);}
+    70%{box-shadow:0 0 0 9px rgba(200,121,31,0);}
+    100%{box-shadow:0 0 0 0 rgba(200,121,31,0);}
+  }
+  .hero h1{font-size:clamp(34px, 5vw, 52px); font-weight:700; color:#fff; margin-bottom:8px;}
+  .hero .role{font-size:clamp(15px, 2vw, 18px); color:#A9C0C4; font-weight:500; margin-bottom:22px;}
+  .hero .contact-row{display:flex; flex-wrap:wrap; gap:18px; font-family:var(--font-mono); font-size:13px; color:#B7C4CB;}
+  .hero .contact-row a{color:#B7C4CB;}
+  .hero .contact-row a:hover{color:#fff;}
+
+  .portrait{
+    width:148px; height:148px; border-radius:50%;
+    overflow:hidden; flex:0 0 auto;
+    border:2px solid rgba(255,255,255,0.14);
+    box-shadow:0 12px 32px rgba(0,0,0,0.35);
+  }
+  .portrait img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  /* --- stat strip --- */
+  .stat-strip{
+    position:relative;
+    background:var(--panel);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat-strip .wrap{
+    display:grid; grid-template-columns:repeat(3, 1fr);
+    padding:26px 28px;
+  }
+  .stat{padding:0 20px; border-left:1px solid var(--line);}
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat .num{font-family:var(--font-mono); font-size:clamp(22px,3vw,30px); font-weight:500; color:var(--signal);}
+  .stat .label{font-size:12.5px; color:var(--ink-soft); margin-top:4px;}
+
+  /* --- section --- */
+  section{padding:64px 0;}
+  section.alt{background:var(--panel);}
+  .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:34px;}
+  .section-head .tag{
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.1em; color:var(--ink-faint);
+    border:1px solid var(--line); padding:3px 8px; border-radius:3px; white-space:nowrap;
+  }
+  .section-head h2{font-size:24px; font-weight:600;}
+
+  /* --- timeline (signature element) --- */
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px;
+    background:linear-gradient(var(--signal), var(--line));
+  }
+  .role-block{position:relative; padding-bottom:44px;}
+  .role-block:last-child{padding-bottom:0;}
+  .role-block::before{
+    content:""; position:absolute; left:-28px; top:5px; width:11px; height:11px; border-radius:50%;
+    background:var(--panel); border:2px solid var(--signal);
+  }
+  .role-block.current::before{background:var(--amber); border-color:var(--amber);}
+  .role-top{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 16px; margin-bottom:6px;}
+  .role-title{font-family:var(--font-display-en); font-weight:600; font-size:18px;}
+  html[data-lang="zh"] .role-title{font-family:var(--font-display-zh);}
+  .role-badge{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase;
+    padding:2px 8px; border-radius:3px; background:var(--signal-soft); color:var(--signal);
+  }
+  .role-block.current .role-badge{background:var(--amber-soft); color:var(--amber);}
+  .role-meta{font-family:var(--font-mono); font-size:12.5px; color:var(--ink-faint); margin-bottom:14px;}
+  .role-block ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  .role-block li{margin-bottom:9px;}
+  .role-block li::marker{color:var(--signal);}
+
+  /* --- skills --- */
+  .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:28px;}
+  .skill-group h3{font-size:13px; font-family:var(--font-mono); letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:12px; font-weight:500;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:13px; padding:6px 11px; border-radius:3px;
+    background:var(--signal-soft); color:var(--signal); border:1px solid transparent;
+  }
+
+  /* --- education & project cards --- */
+  .card-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px;}
+  .card h3{font-size:16px; margin-bottom:4px;}
+  .card .meta{font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:12px;}
+  .card p, .card ul{color:var(--ink-soft); font-size:14px; margin:0; padding-left:18px;}
+  .card p{padding-left:0;}
+
+  /* --- footer --- */
+  footer{background:var(--navy); color:#B7C4CB; padding:52px 0 40px;}
+  footer .wrap{display:grid; grid-template-columns:repeat(3,1fr); gap:30px;}
+  footer h3{font-size:12px; font-family:var(--font-mono); letter-spacing:0.08em; text-transform:uppercase; color:#7C93A0; margin-bottom:12px; font-weight:500;}
+  footer p, footer a{font-size:14px; color:#DCE6E9; line-height:1.7;}
+  footer a{color:#DCE6E9; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.25);}
+  .foot-bottom{
+    max-width:var(--maxw); margin:36px auto 0; padding:20px 28px 0; border-top:1px solid rgba(255,255,255,0.1);
+    font-family:var(--font-mono); font-size:11.5px; color:#5F7481;
+  }
+
+  @media (max-width:720px){
+    .hero-inner{flex-direction:column-reverse; align-items:flex-start;}
+    .stat-strip .wrap{grid-template-columns:1fr; gap:16px;}
+    .stat{border-left:none; padding-left:0; padding-bottom:14px; border-bottom:1px solid var(--line);}
+    .stat:last-child{border-bottom:none; padding-bottom:0;}
+    .card-grid{grid-template-columns:1fr;}
+    footer .wrap{grid-template-columns:1fr; gap:26px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .status-dot{animation:none;}
+    .reveal{opacity:1 !important; transform:none !important; transition:none !important;}
+  }
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle" role="group" aria-label="Language / 语言">
+  <button type="button" data-set-lang="en" class="active">EN</button>
+  <button type="button" data-set-lang="zh">中文</button>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span data-en>SYSTEM STATUS · ONLINE</span>
+        <span data-zh>系统状态 · 在线</span>
+      </div>
+      <h1><span data-en>Xizhu Han</span><span data-zh>韩熙竹</span></h1>
+      <p class="role">
+        <span data-en>Global Operations Analyst — Data Centre Infrastructure</span>
+        <span data-zh>全球运维分析师 · 数据中心基础设施</span>
+      </p>
+      <div class="contact-row">
+        <a href="mailto:xizhu.han@outlook.com">xizhu.han@outlook.com</a>
+        <a href="tel:+447840217858">+44 (0)7840 217858</a>
+        <span data-en>London, UK</span>
+        <span data-zh>英国 · 伦敦</span>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="assets/photo.jpg" alt="Xizhu Han portrait / 韩熙竹 照片">
+    </div>
+  </div>
+</header>
+
+<div class="stat-strip">
+  <div class="wrap">
+    <div class="stat">
+      <div class="num">300+</div>
+      <div class="label"><span data-en>Sites monitored across 17 countries</span><span data-zh>覆盖 17 个国家的 300+ 数据中心站点</span></div>
+    </div>
+    <div class="stat">
+      <div class="num">98%</div>
+      <div class="label"><span data-en>On-time incident response compliance</span><span data-zh>事件响应 SLA 达成率</span></div>
+    </div>
+    <div class="stat">
+      <div class="num">2wk → 1wk</div>
+      <div class="label"><span data-en>New hire time-to-productivity, after redesign</span><span data-zh>新人上手周期(优化后)</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag" data-en>EXPERIENCE</span><span class="tag" data-zh>工作经历</span>
+      <h2><span data-en>Track Record</span><span data-zh>履历</span></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="role-block current reveal">
+        <div class="role-top">
+          <span class="role-title"><span data-en>EMEA Facility Operations Centre</span><span data-zh>EMEA 设施运维中心</span></span>
+          <span class="role-badge" data-en>ACTIVE</span>
+          <span class="role-badge" data-zh>进行中</span>
+        </div>
+        <div class="role-meta">
+          <span data-en>Alibaba Cloud · London, UK · Mar 2024 – Present</span>
+          <span data-zh>阿里云 · 英国伦敦 · 2024年3月至今</span>
+        </div>
+        <ul data-en>
+          <li>Oversaw daily operational monitoring and incident coordination across 300+ data centre sites in 17 countries, achieving 98% on-time incident response compliance while sustaining stable service delivery across the EMEA region.</li>
+          <li>Managed alarm governance and threshold configuration for the EMS 4.1 monitoring project across EMEA and AMER, running root cause analysis to separate false positives from real facility incidents and reduce operational noise.</li>
+          <li>Designed a structured onboarding programme for 4 new hires — standardised documentation, troubleshooting guides and training materials — cutting time-to-productivity from 2 weeks to 1.</li>
+          <li>Identified recurring SLA breaches in platform ticket handling; led a 5-country operational improvement initiative, training 100+ onsite engineers and establishing SOPs still used for onboarding today.</li>
+          <li>Partnered with regional IT and facility teams during high-priority incidents, coordinating escalation and emergency response to minimise service impact within SLA targets.</li>
+        </ul>
+        <ul data-zh>
+          <li>负责 17 个国家 300+ 数据中心站点的日常运维监控与事件协调，事件响应 SLA 达成率保持在 98%，保障 EMEA 区域服务稳定交付。</li>
+          <li>负责 EMEA 与 AMER 区域 EMS 4.1 监控项目的告警治理与阈值配置，通过根因分析区分误报与真实故障，降低运维噪音。</li>
+          <li>设计并落地 4 名新员工的结构化入职培训体系（标准化文档、排障指南、培训材料），将新人上手周期从 2 周缩短至 1 周。</li>
+          <li>识别现场工程团队在平台工单处理中反复出现的 SLA 违约问题，主导覆盖 5 个国家的运维改进项目，为 100+ 现场工程师提供培训，建立至今仍在使用的标准作业流程。</li>
+          <li>在高优先级事件中与区域 IT、设施团队紧密协作，统筹升级沟通与应急响应，将服务影响降到最低并保障 SLA 达成。</li>
+        </ul>
+      </div>
+
+      <div class="role-block reveal">
+        <div class="role-top">
+          <span class="role-title"><span data-en>Consultant</span><span data-zh>咨询顾问</span></span>
+          <span class="role-badge" data-en>COMPLETE</span>
+          <span class="role-badge" data-zh>已完成</span>
+        </div>
+        <div class="role-meta">
+          <span data-en>Shenzhen Tiyan Technology · Shenzhen, China · Oct 2023 – Mar 2024</span>
+          <span data-zh>深圳梯言科技 · 中国深圳 · 2023年10月–2024年3月</span>
+        </div>
+        <ul data-en>
+          <li>Managed the full lifecycle of 30 active and 60+ prospective clients — requirements analysis, solution documentation and delivery planning — to ensure high-quality project execution.</li>
+          <li>Worked cross-functionally with delivery, operations and technical teams to align requirements and manage multiple concurrent projects through structured prioritisation.</li>
+        </ul>
+        <ul data-zh>
+          <li>管理 30 家在营客户及 60+ 潜在客户的全周期服务，负责需求分析、方案文档撰写与交付计划协调，保障项目高质量执行。</li>
+          <li>与交付、运营、技术团队跨部门协作，通过结构化优先级排序对齐客户需求、并行管理多个项目。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag" data-en>EDUCATION &amp; PROJECT</span><span class="tag" data-zh>教育与项目</span>
+      <h2><span data-en>Foundation</span><span data-zh>基础</span></h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <h3><span data-en>BSc Mathematics &amp; Statistics</span><span data-zh>数学与统计学 理学学士</span></h3>
+        <div class="meta"><span data-en>University College London (UCL) · Sep 2020 – Sep 2023</span><span data-zh>伦敦大学学院 (UCL) · 2020年9月–2023年9月</span></div>
+        <p data-en>Coursework: Statistical Computing, Statistical Inference, Analysis, Algebra. Led structured workshops for 200+ students; negotiated a Bloomberg data partnership for a real-world market analysis programming course.</p>
+        <p data-zh>核心课程：统计计算、统计推断、分析学、代数。曾为 200+ 名学生主持结构化工作坊，并促成与 Bloomberg 的数据合作，用于市场分析编程实践课程。</p>
+      </div>
+      <div class="card reveal">
+        <h3><span data-en>Camel Agent — AI Landscape Research</span><span data-zh>Camel Agent · AI 产品调研</span></h3>
+        <div class="meta"><span data-en>Volunteer</span><span data-zh>志愿项目</span></div>
+        <p data-en>Conducted comparative analysis of AI products on the market and collected real-world LLM use cases to support the product team's understanding of the competitive landscape and practical agent applications.</p>
+        <p data-zh>对市面 AI 产品进行对比分析，收集真实的大语言模型应用案例，协助产品团队理解竞争格局与 Agent 实际应用场景。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag" data-en>CAPABILITIES</span><span class="tag" data-zh>能力</span>
+      <h2><span data-en>Skills</span><span data-zh>技能</span></h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3><span data-en>IT Operations</span><span data-zh>IT 运维</span></h3>
+        <div class="chips">
+          <span class="chip"><span data-en>Data Centre Operations</span><span data-zh>数据中心运维</span></span>
+          <span class="chip"><span data-en>Incident Management</span><span data-zh>事件管理</span></span>
+          <span class="chip"><span data-en>SLA Management</span><span data-zh>SLA 管理</span></span>
+          <span class="chip"><span data-en>Alarm Governance</span><span data-zh>告警治理</span></span>
+          <span class="chip"><span data-en>Root Cause Analysis</span><span data-zh>根因分析</span></span>
+          <span class="chip"><span data-en>EMS 4.1</span><span data-zh>EMS 4.1</span></span>
+          <span class="chip"><span data-en>Process Optimisation</span><span data-zh>流程优化</span></span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><span data-en>Technical</span><span data-zh>技术能力</span></h3>
+        <div class="chips">
+          <span class="chip">R <span data-en>(Advanced)</span><span data-zh>(熟练)</span></span>
+          <span class="chip">Python <span data-en>(Advanced)</span><span data-zh>(熟练)</span></span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><span data-en>Languages</span><span data-zh>语言</span></h3>
+        <div class="chips">
+          <span class="chip"><span data-en>Mandarin (Native)</span><span data-zh>普通话(母语)</span></span>
+          <span class="chip"><span data-en>English (Fluent)</span><span data-zh>英语(流利)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag" data-en>BEYOND WORK</span><span class="tag" data-zh>工作之外</span>
+      <h2><span data-en>Volunteering &amp; Interests</span><span data-zh>志愿与兴趣</span></h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <h3><span data-en>Zero Gravity Mentor</span><span data-zh>Zero Gravity 导师</span></h3>
+        <div class="meta"><span data-en>Two-year mentoring programme</span><span data-zh>两年期导师项目</span></div>
+        <p data-en>100% university application success rate across mentees.</p>
+        <p data-zh>所指导学生大学申请成功率达 100%。</p>
+      </div>
+      <div class="card reveal">
+        <h3><span data-en>Interests</span><span data-zh>兴趣爱好</span></h3>
+        <p data-en>Accordion (Grade 10, National Silver Medal) · Reading · Photography</p>
+        <p data-zh>手风琴(十级，全国银奖) · 阅读 · 摄影</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3><span data-en>Contact</span><span data-zh>联系方式</span></h3>
+      <p><a href="mailto:xizhu.han@outlook.com">xizhu.han@outlook.com</a></p>
+      <p><a href="tel:+447840217858">+44 (0)7840 217858</a></p>
+    </div>
+    <div>
+      <h3><span data-en>Location</span><span data-zh>所在地</span></h3>
+      <p><span data-en>London, United Kingdom</span><span data-zh>英国 · 伦敦</span></p>
+    </div>
+    <div>
+      <h3><span data-en>Currently</span><span data-zh>当前状态</span></h3>
+      <p><span data-en>Open to Operations &amp; IT Management opportunities</span><span data-zh>欢迎运维与 IT 管理相关机会</span></p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span data-en>© 2026 Xizhu Han. Built as a static site.</span>
+    <span data-zh>© 2026 韩熙竹 · 静态网站</span>
+  </div>
+</footer>
+
+<script>
+  // language toggle
+  var buttons = document.querySelectorAll('[data-set-lang]');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-set-lang');
+      document.documentElement.setAttribute('data-lang', lang);
+      buttons.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      try { localStorage.setItem('site-lang', lang); } catch(e){}
+    });
+  });
+  try {
+    var saved = localStorage.getItem('site-lang');
+    if (saved === 'en' || saved === 'zh') {
+      document.documentElement.setAttribute('data-lang', saved);
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-set-lang') === saved); });
+    }
+  } catch(e){}
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+
+</body>
+</html>
