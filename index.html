@@ -122,22 +122,6 @@
   }
   .portrait img{width:100%; height:100%; object-fit:cover; display:block;}
 
-  /* --- stat strip --- */
-  .stat-strip{
-    position:relative;
-    background:var(--panel);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .stat-strip .wrap{
-    display:grid; grid-template-columns:repeat(3, 1fr);
-    padding:26px 28px;
-  }
-  .stat{padding:0 20px; border-left:1px solid var(--line);}
-  .stat:first-child{border-left:none; padding-left:0;}
-  .stat .num{font-family:var(--font-mono); font-size:clamp(22px,3vw,30px); font-weight:500; color:var(--signal);}
-  .stat .label{font-size:12.5px; color:var(--ink-soft); margin-top:4px;}
-
   /* --- section --- */
   section{padding:64px 0;}
   section.alt{background:var(--panel);}
@@ -204,9 +188,6 @@
 
   @media (max-width:720px){
     .hero-inner{flex-direction:column-reverse; align-items:flex-start;}
-    .stat-strip .wrap{grid-template-columns:1fr; gap:16px;}
-    .stat{border-left:none; padding-left:0; padding-bottom:14px; border-bottom:1px solid var(--line);}
-    .stat:last-child{border-bottom:none; padding-bottom:0;}
     .card-grid{grid-template-columns:1fr;}
     footer .wrap{grid-template-columns:1fr; gap:26px;}
   }
@@ -254,23 +235,6 @@
   </div>
 </header>
 
-<div class="stat-strip">
-  <div class="wrap">
-    <div class="stat">
-      <div class="num">300+</div>
-      <div class="label"><span data-en>Sites monitored across 17 countries</span><span data-zh>覆盖 17 个国家的 300+ 数据中心站点</span></div>
-    </div>
-    <div class="stat">
-      <div class="num">98%</div>
-      <div class="label"><span data-en>On-time incident response compliance</span><span data-zh>事件响应 SLA 达成率</span></div>
-    </div>
-    <div class="stat">
-      <div class="num">2wk → 1wk</div>
-      <div class="label"><span data-en>New hire time-to-productivity, after redesign</span><span data-zh>新人上手周期(优化后)</span></div>
-    </div>
-  </div>
-</div>
-
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -290,17 +254,17 @@
           <span data-zh>阿里云 · 英国伦敦 · 2024年3月至今</span>
         </div>
         <ul data-en>
-          <li>Oversaw daily operational monitoring and incident coordination across 300+ data centre sites in 17 countries, achieving 98% on-time incident response compliance while sustaining stable service delivery across the EMEA region.</li>
-          <li>Managed alarm governance and threshold configuration for the EMS 4.1 monitoring project across EMEA and AMER, running root cause analysis to separate false positives from real facility incidents and reduce operational noise.</li>
-          <li>Designed a structured onboarding programme for 4 new hires — standardised documentation, troubleshooting guides and training materials — cutting time-to-productivity from 2 weeks to 1.</li>
-          <li>Identified recurring SLA breaches in platform ticket handling; led a 5-country operational improvement initiative, training 100+ onsite engineers and establishing SOPs still used for onboarding today.</li>
+          <li>Oversaw daily operational monitoring and incident coordination across 300+ data centre sites in 17 countries, achieving 98% on-time incident response compliance while sustaining staff engagement and service continuity.</li>
+          <li>Managed alarm governance and threshold configuration for the EMS 4.1 monitoring project across EMEA and AMER, running root cause analysis to separate false positives from real facility faults and reduce alert noise by 40%.</li>
+          <li>Designed a structured onboarding programme for 4 new hires — standardised documentation, troubleshooting guides and training materials — cutting time-to-productivity from 2 weeks to 1 week.</li>
+          <li>Identified recurring SLA breaches in platform ticket handling; led a 5-country operational improvement initiative, training 100+ onsite engineers and establishing SOPs still used for incident triage across EMEA.</li>
           <li>Partnered with regional IT and facility teams during high-priority incidents, coordinating escalation and emergency response to minimise service impact within SLA targets.</li>
         </ul>
         <ul data-zh>
           <li>负责 17 个国家 300+ 数据中心站点的日常运维监控与事件协调，事件响应 SLA 达成率保持在 98%，保障 EMEA 区域服务稳定交付。</li>
-          <li>负责 EMEA 与 AMER 区域 EMS 4.1 监控项目的告警治理与阈值配置，通过根因分析区分误报与真实故障，降低运维噪音。</li>
+          <li>负责 EMEA 与 AMER 区域 EMS 4.1 监控项目的告警治理与阈值配置，通过根因分析区分误报与真实故障，降低运维噪音 40%。</li>
           <li>设计并落地 4 名新员工的结构化入职培训体系（标准化文档、排障指南、培训材料），将新人上手周期从 2 周缩短至 1 周。</li>
-          <li>识别现场工程团队在平台工单处理中反复出现的 SLA 违约问题，主导覆盖 5 个国家的运维改进项目，为 100+ 现场工程师提供培训，建立至今仍在使用的标准作业流程。</li>
+          <li>识别现场工程团队在平台工单处理中反复出现的 SLA 违约问题，主导覆盖 5 个国家的运维改进项目，为 100+ 现场工程师提供培训，建立至今沿用的 SOP。</li>
           <li>在高优先级事件中与区域 IT、设施团队紧密协作，统筹升级沟通与应急响应，将服务影响降到最低并保障 SLA 达成。</li>
         </ul>
       </div>
@@ -313,15 +277,75 @@
         </div>
         <div class="role-meta">
           <span data-en>Shenzhen Tiyan Technology · Shenzhen, China · Oct 2023 – Mar 2024</span>
-          <span data-zh>深圳梯言科技 · 中国深圳 · 2023年10月–2024年3月</span>
+          <span data-zh>深���梯言科技 · 中国深圳 · 2023年10月–2024年3月</span>
         </div>
         <ul data-en>
-          <li>Managed the full lifecycle of 30 active and 60+ prospective clients — requirements analysis, solution documentation and delivery planning — to ensure high-quality project execution.</li>
+          <li>Managed the full lifecycle of 30 active and 60+ prospective clients — requirements analysis, solution documentation and delivery planning — to ensure high-quality project execution and client satisfaction.</li>
           <li>Worked cross-functionally with delivery, operations and technical teams to align requirements and manage multiple concurrent projects through structured prioritisation.</li>
         </ul>
         <ul data-zh>
           <li>管理 30 家在营客户及 60+ 潜在客户的全周期服务，负责需求分析、方案文档撰写与交付计划协调，保障项目高质量执行。</li>
           <li>与交付、运营、技术团队跨部门协作，通过结构化优先级排序对齐客户需求、并行管理多个项目。</li>
+        </ul>
+      </div>
+
+      <div class="role-block reveal">
+        <div class="role-top">
+          <span class="role-title"><span data-en>Equity Research Intern</span><span data-zh>股票研究实习生</span></span>
+          <span class="role-badge" data-en>INTERNSHIP</span>
+          <span class="role-badge" data-zh>实习</span>
+        </div>
+        <div class="role-meta">
+          <span data-en>China Galaxy Securities · Shanxi, China · Jun 2022 – Sep 2022</span>
+          <span data-zh>中国银河证券 · 中国山西 · 2022年6月–2022年9月</span>
+        </div>
+        <ul data-en>
+          <li>Participated in a due diligence project for a £17m Money Market Fund, identifying key market trends and benchmarking fund performance against competitors, while assessing regulatory developments to inform strategic portfolio investment recommendations.</li>
+          <li>Advised institutional and high-net-worth clients on tailored risk management strategies and financial solutions, leveraging research findings to ensure alignment with individual risk appetites and investment goals, achieving a 20%+ follow-up engagement rate.</li>
+        </ul>
+        <ul data-zh>
+          <li>参与 1700 万英镑货币市场基金的尽职调查项目，识别关键市场趋势、基准对标竞争基金表现，评估监管发展为组合投资提供战略建议。</li>
+          <li>为机构和高净值客户提供定制化风险管理策略与金融解决方案，基于研究成果保障方案与客户风险偏好和投资目标对齐，实现 20% 以上的后续跟进接触率。</li>
+        </ul>
+      </div>
+
+      <div class="role-block reveal">
+        <div class="role-top">
+          <span class="role-title"><span data-en>Spring Intern, Treasury and Trade Solution Division</span><span data-zh>春季实习生，金融市场交易解决方案部</span></span>
+          <span class="role-badge" data-en>INTERNSHIP</span>
+          <span class="role-badge" data-zh>实习</span>
+        </div>
+        <div class="role-meta">
+          <span data-en>Citi Bank · London, UK · Apr 2021</span>
+          <span data-zh>花旗银行 · 英国伦敦 · 2021年4月</span>
+        </div>
+        <ul data-en>
+          <li>Led a mini project analysing the impact of Fintech on TTS focusing on Blockchain and Payments, leveraging recent partnerships such as PPRO and Mastercard to identify use case trends and opportunities for enhanced financial services.</li>
+          <li>Earned the Business Leader Prize for outstanding analytical work and strategic recommendations on emerging fintech trends.</li>
+        </ul>
+        <ul data-zh>
+          <li>主导分析 Fintech 对 TTS 的影响的小型项目，聚焦区块链和支付领域，利用 PPRO 和万事达卡等最新合作伙伴来识别用例趋势和增强金融服务的机会。</li>
+          <li>因杰出的分析工作和新兴金融科技趋势的战略建议获得商业领袖奖。</li>
+        </ul>
+      </div>
+
+      <div class="role-block reveal">
+        <div class="role-top">
+          <span class="role-title"><span data-en>Spring Intern, Global Banking – Liquidity &amp; Cash Management Division</span><span data-zh>春季实习生，全球银行部-流动性与现金管理部</span></span>
+          <span class="role-badge" data-en>INTERNSHIP</span>
+          <span class="role-badge" data-zh>实习</span>
+        </div>
+        <div class="role-meta">
+          <span data-en>HSBC · London, UK · Apr 2021</span>
+          <span data-zh>汇丰银行 · 英国伦敦 · 2021年4月</span>
+        </div>
+        <ul data-en>
+          <li>Spearheaded a 5-person team in a stock pitch simulation advocating for a buy rating on a global aerospace company, evaluating financial metrics and benchmarking competitors to drive P/E multiple valuation.</li>
+          <li>Oversaw macroeconomic research to develop a compelling panel presentation demonstrating strong analytical and communication skills.</li>
+        </ul>
+        <ul data-zh>
+          <li>领导 5 人团队在股票投资模拟中倡导对全球航空航天公司的买入评级，通过评估财务指标和基准对标竞争对手来推动市盈率估值。</li>
+          <li>监督宏观经济研究以开发引人注目的小组演示，展示强大的分析和沟通技能。</li>
         </ul>
       </div>
     </div>
@@ -338,13 +362,13 @@
       <div class="card reveal">
         <h3><span data-en>BSc Mathematics &amp; Statistics</span><span data-zh>数学与统计学 理学学士</span></h3>
         <div class="meta"><span data-en>University College London (UCL) · Sep 2020 – Sep 2023</span><span data-zh>伦敦大学学院 (UCL) · 2020年9月–2023年9月</span></div>
-        <p data-en>Coursework: Statistical Computing, Statistical Inference, Analysis, Algebra. Led structured workshops for 200+ students; negotiated a Bloomberg data partnership for a real-world market analysis programming course.</p>
-        <p data-zh>核心课程：统计计算、统计推断、分析学、代数。曾为 200+ 名学生主持结构化工作坊，并促成与 Bloomberg 的数据合作，用于市场分析编程实践课程。</p>
+        <p data-en>Coursework: Statistical Computing, Statistical Inference, Analysis, Algebra. Led structured workshops for 200+ students; negotiated a Bloomberg data partnership for a real-world market analysis project.</p>
+        <p data-zh>核心课程：统计计算、统计推断、分析学、代数。曾为 200+ 名学生主持结构化工作坊，并促成与 Bloomberg 的数据合作，用于市场分析编程项目。</p>
       </div>
       <div class="card reveal">
         <h3><span data-en>Camel Agent — AI Landscape Research</span><span data-zh>Camel Agent · AI 产品调研</span></h3>
         <div class="meta"><span data-en>Volunteer</span><span data-zh>志愿项目</span></div>
-        <p data-en>Conducted comparative analysis of AI products on the market and collected real-world LLM use cases to support the product team's understanding of the competitive landscape and practical agent applications.</p>
+        <p data-en>Conducted comparative analysis of AI products on the market and collected real-world LLM use cases to support the product team's understanding of the competitive landscape and Agent practical application scenarios.</p>
         <p data-zh>对市面 AI 产品进行对比分析，收集真实的大语言模型应用案例，协助产品团队理解竞争格局与 Agent 实际应用场景。</p>
       </div>
     </div>
@@ -368,6 +392,16 @@
           <span class="chip"><span data-en>Root Cause Analysis</span><span data-zh>根因分析</span></span>
           <span class="chip"><span data-en>EMS 4.1</span><span data-zh>EMS 4.1</span></span>
           <span class="chip"><span data-en>Process Optimisation</span><span data-zh>流程优化</span></span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><span data-en>Financial &amp; Business</span><span data-zh>金融与商业</span></h3>
+        <div class="chips">
+          <span class="chip"><span data-en>Equity Research</span><span data-zh>股票研究</span></span>
+          <span class="chip"><span data-en>Risk Management</span><span data-zh>风险管理</span></span>
+          <span class="chip"><span data-en>Portfolio Analysis</span><span data-zh>投资组合分析</span></span>
+          <span class="chip"><span data-en>Fintech &amp; Blockchain</span><span data-zh>金融科技与区块链</span></span>
+          <span class="chip"><span data-en>Financial Valuation</span><span data-zh>财务估值</span></span>
         </div>
       </div>
       <div class="skill-group">
