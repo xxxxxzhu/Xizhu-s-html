@@ -1,9 +1,8 @@
-# 韩熙竹个人简历网站
+# 韩熙竹个人网站
 
-纯静态网站（一个 index.html + 一张照片），中英双语切换，免费用 GitHub Pages
-托管，几分钟就能有一个自己的网址。
+纯静态网站（一个 index.html + 一张照片），中英双语切换
 
-## 部署到 GitHub Pages（免费，约5分钟）
+## 部署到 GitHub Pages
 
 1. 去 github.com 新建一个仓库，名字随便取，比如 `my-resume`（建议选 Public，
    GitHub Pages 免费版需要公开仓库；如果不想让搜索引擎收录，可以在页面加
